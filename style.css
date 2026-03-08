@@ -108,11 +108,12 @@ nav {
 
     /* 首頁實景圖不裁切海報式排版 */
     .hero {
-        background-image: linear-gradient(rgba(0, 45, 64, 0.2) 0%, var(--evergreen-dark) 60%), url('images/beta.JPG');
-        background-size: 100% auto, 100% auto;
-        background-position: top, top;
-        background-color: var(--evergreen-dark);
-        align-items: flex-end; padding-bottom: 15vh;
+        /* 恢復與電腦版相同的深色遮罩與滿版設定 (cover) */
+        background: linear-gradient(rgba(0, 45, 64, 0.75), rgba(0, 18, 25, 0.85)), 
+                    url('images/beta.JPG') center/cover no-repeat;
+        /* 讓文字重新回到畫面正中央 */
+        align-items: center; 
+        padding-bottom: 0;
     }
     .hero-content h1 { font-size: 2.2rem; letter-spacing: 3px; margin-bottom: 15px; }
     .hero-content p { font-size: 1rem; }
