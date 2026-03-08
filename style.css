@@ -106,14 +106,17 @@ nav {
     .hamburger.toggle .bar:nth-child(2) { opacity: 0; }
     .hamburger.toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* 首頁實景圖不裁切海報式排版 */
+    /* 首頁實景圖不裁切 (橫幅海報模式)，文字置中 */
     .hero {
-        /* 恢復與電腦版相同的深色遮罩與滿版設定 (cover) */
+        /* 關鍵 1：把 cover 改成 contain，照片就會依照原比例完整顯示，絕不裁切 */
         background: linear-gradient(rgba(0, 45, 64, 0.75), rgba(0, 18, 25, 0.85)), 
-                    url('images/beta.JPG') center/cover no-repeat;
-        /* 讓文字重新回到畫面正中央 */
+                    url('images/beta.JPG') center/contain no-repeat;
+        background-color: var(--evergreen-dark); /* 填滿照片上下的剩餘空間 */
+        
+        /* 關鍵 2：把原本 100vh (全螢幕高) 改矮，讓它貼合橫式照片的比例 */
+        height: 50vh; 
         align-items: center; 
-        padding-bottom: 0;
+        padding-top: 60px; /* 稍微往下推，避免字被上方的導覽列擋住 */
     }
     .hero-content h1 { font-size: 2.2rem; letter-spacing: 3px; margin-bottom: 15px; }
     .hero-content p { font-size: 1rem; }
