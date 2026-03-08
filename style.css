@@ -106,19 +106,17 @@ nav {
     .hamburger.toggle .bar:nth-child(2) { opacity: 0; }
     .hamburger.toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* 首頁實景圖完美比例 (無裁切、無多餘色塊) */
+    /* 首頁實景圖：加高版面，讓視覺更飽滿大氣 */
     .hero {
-        /* 1. 拿掉固定高度，改用與相機照片相同的 3:2 比例 (如果是 16:9 請自行修改數字) */
-        height: auto;
-        aspect-ratio: 3 / 2; 
-
-        /* 2. 背景設定為 cover，因為容器比例已經跟照片一樣了，所以絕對不會裁切！ */
+        /* 取消之前的 aspect-ratio，改用 60vh 讓它佔據手機螢幕 60% 的高度 */
+        height: 60vh; 
+        
+        /* 使用 center/cover 讓照片以中心為基準，完美填滿這個舒服的高度 */
         background: linear-gradient(rgba(0, 45, 64, 0.75), rgba(0, 18, 25, 0.85)), 
                     url('images/beta.JPG') center/cover no-repeat;
         
-        /* 3. 確保文字置中，並稍微往下推避開導覽列 */
         align-items: center; 
-        padding-top: 50px; 
+        padding-top: 60px; /* 稍微往下推，避開上方的導覽列 */
     }
     
     /* 因為照片變小了，手機版的標題字也要稍微縮小才放得進去 */
