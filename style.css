@@ -12,7 +12,6 @@
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
-    /* 這裡已經幫你設定回有學術氣質的明體/襯線體了 */
     font-family: "Noto Serif TC", serif; 
 }
 
@@ -31,11 +30,8 @@ nav {
     backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(201, 173, 106, 0.3);
 }
 .logo { 
-    font-size: 1.4rem; 
-    font-weight: bold; 
-    letter-spacing: 2px; 
-    color: var(--accent-gold); 
-    text-decoration: none; /* 新增這行：去掉超連結的預設底線 */
+    font-size: 1.4rem; font-weight: bold; letter-spacing: 2px; color: var(--accent-gold); 
+    text-decoration: none;
 }
 .nav-links { display: flex; list-style: none; }
 .nav-links li { margin-left: 30px; }
@@ -43,12 +39,18 @@ nav {
 .nav-links a:hover { opacity: 1; color: var(--accent-gold); }
 .btn-school { border: 1px solid var(--accent-gold); padding: 5px 15px; border-radius: 4px; }
 
+/* 漢堡按鈕 (電腦版預設隱藏) */
+.hamburger { display: none; cursor: pointer; z-index: 1001; }
+.hamburger .bar {
+    display: block; width: 25px; height: 3px; margin: 5px auto;
+    transition: all 0.3s ease-in-out; background-color: var(--accent-gold);
+}
+
 /* ==============================
    3. 首頁主視覺區 (Hero Section) 
    ============================== */
 .hero {
     height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;
-    /* 這裡指向你拍攝的貝類館實景圖，並加上深藍色遮罩 */
     background: linear-gradient(rgba(0, 45, 64, 0.75), rgba(0, 18, 25, 0.85)), 
                 url('images/beta.JPG') center/cover no-repeat;
 }
@@ -85,98 +87,38 @@ nav {
 .footer-credit p { font-size: 0.9rem; opacity: 0.7; margin-bottom: 10px; line-height: 1.6; }
 .footer-copy { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 25px; font-size: 0.8rem; opacity: 0.4; letter-spacing: 1px; }
 
-/* 手機版適應 (RWD) */
-@media (max-width: 850px) {
-    /* 1. 解決手機版照片裁切問題：海報式排版 */
-    .hero {
-        /* 將照片設定為完整寬度 (100% auto) 並靠上對齊 */
-        background-image: 
-            /* 製作一個從透明到深藍色的漸層遮罩，讓照片底部完美融合背景 */
-            linear-gradient(rgba(0, 45, 64, 0.2) 0%, var(--evergreen-dark) 60%), 
-            url('images/beta.JPG');
-        background-size: 100% auto, 100% auto;
-        background-position: top, top;
-        background-repeat: no-repeat, no-repeat;
-        background-color: var(--evergreen-dark); /* 填滿照片下方的空白 */
-        
-        /* 將文字往下推 */
-        align-items: flex-end; 
-        padding-bottom: 15vh;
-    }
-
-    /* 2. 手機版字體與排版微調 */
-    .hero-content h1 { font-size: 2.2rem; letter-spacing: 3px; margin-bottom: 15px; }
-    .hero-content p { font-size: 1rem; }
-    
-    /* 3. 其他原本的手機版設定 */
-    .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-    .footer-nav h3::after, .footer-credit h3::after { left: 50%; transform: translateX(-50%); }
-    .intro-section { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-}
 /* ==============================
-   漢堡選單按鈕 (電腦版預設隱藏)
-   ============================== */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    z-index: 1001; /* 確保按鈕永遠在最上層 */
-}
-
-.hamburger .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: var(--accent-gold); /* 使用你設定的珍珠金色 */
-}
-/* ==============================
-   手機版適應 (RWD) - 統一斷點 768px
+   6. 手機版適應 (RWD) - 斷點 768px
    ============================== */
 @media (max-width: 768px) {
-    /* 1. 解決手機版照片裁切問題：海報式排版 */
-    .hero {
-        background-image: 
-            linear-gradient(rgba(0, 45, 64, 0.2) 0%, var(--evergreen-dark) 60%), 
-            url('images/beta.JPG');
-        background-size: 100% auto, 100% auto;
-        background-position: top, top;
-        background-repeat: no-repeat, no-repeat;
-        background-color: var(--evergreen-dark);
-        align-items: flex-end; 
-        padding-bottom: 15vh;
-    }
-
-    .hero-content h1 { font-size: 2.2rem; letter-spacing: 3px; margin-bottom: 15px; }
-    .hero-content p { font-size: 1rem; }
-    
-    .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-    .footer-nav h3::after, .footer-credit h3::after { left: 50%; transform: translateX(-50%); }
-    .intro-section { grid-template-columns: 1fr; }
-    
-    /* 2. 顯示漢堡按鈕並隱藏原本選單 */
+    /* 漢堡按鈕顯示，並修改選單樣式 */
     .hamburger { display: block; }
     .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: var(--glass-bg);
-        backdrop-filter: blur(15px);
-        width: 100%;
-        text-align: center;
-        transition: 0.4s ease-in-out;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        padding: 30px 0;
+        position: fixed; right: -100%; top: 70px; flex-direction: column;
+        background: var(--glass-bg); backdrop-filter: blur(15px); width: 100%;
+        text-align: center; transition: 0.4s ease-in-out; box-shadow: 0 10px 20px rgba(0,0,0,0.5); padding: 30px 0;
     }
-
     .nav-links.nav-active { right: 0; }
     .nav-links li { margin: 25px 0; }
-
-    /* 3. 漢堡按鈕動畫 */
+    
+    /* 漢堡變 X 動畫 */
     .hamburger.toggle .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.toggle .bar:nth-child(2) { opacity: 0; }
     .hamburger.toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* 首頁實景圖不裁切海報式排版 */
+    .hero {
+        background-image: linear-gradient(rgba(0, 45, 64, 0.2) 0%, var(--evergreen-dark) 60%), url('images/beta.JPG');
+        background-size: 100% auto, 100% auto;
+        background-position: top, top;
+        background-color: var(--evergreen-dark);
+        align-items: flex-end; padding-bottom: 15vh;
+    }
+    .hero-content h1 { font-size: 2.2rem; letter-spacing: 3px; margin-bottom: 15px; }
+    .hero-content p { font-size: 1rem; }
+    
+    /* 內容區塊改為單欄 */
+    .intro-section { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .footer-nav h3::after, .footer-credit h3::after { left: 50%; transform: translateX(-50%); }
 }
