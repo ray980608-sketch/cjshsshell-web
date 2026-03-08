@@ -9,15 +9,34 @@
 <body>
 
     <nav>
-        <a href="index.html" class="logo">SHELLS-HOUSE 貝類館</a>
+        <a href="index.html" class="logo">EVER-GREEN 貝類館</a>
+        
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <ul class="nav-links">
-            <li><a href="#about">貝類館簡介</a></li>
+            <li><a href="#about">場館簡介</a></li>
             <li><a href="#gallery">珍藏圖鑑</a></li>
             <li><a href="#science">科學與保育</a></li>
-            <li><a href="https://www.cjshs.tn.edu.tw/" target="_blank" class="btn-school">回校首頁</a></li>
+            <li><a href="https://www.egsh.tn.edu.tw/" target="_blank" class="btn-school">回校首頁</a></li>
         </ul>
     </nav>
 
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            // 切換選單的顯示狀態
+            navLinks.classList.toggle("nav-active");
+            // 讓漢堡變成 X 的動畫狀態
+            hamburger.classList.toggle("toggle");
+        });
+    </script>
+</body>
+</html>
     <header class="hero">
         <div class="hero-content">
             <h1>數位典藏．海洋之窗</h1>

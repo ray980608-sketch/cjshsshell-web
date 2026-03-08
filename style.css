@@ -114,3 +114,65 @@ nav {
     .intro-section { grid-template-columns: 1fr; }
     .nav-links { display: none; }
 }
+/* ==============================
+   漢堡選單按鈕 (電腦版預設隱藏)
+   ============================== */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001; /* 確保按鈕永遠在最上層 */
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--accent-gold); /* 使用你設定的珍珠金色 */
+}
+@media (max-width: 768px) {
+    /* 1. 顯示漢堡按鈕 */
+    .hamburger {
+        display: block;
+    }
+
+    /* 2. 手機版選單：改為垂直排列、滿版玻璃背景，並先藏在畫面右側 */
+    .nav-links {
+        position: fixed;
+        right: -100%; /* 預設藏在畫面右側外 */
+        top: 70px; /* 導航列的高度下方 */
+        flex-direction: column;
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px);
+        width: 100%;
+        text-align: center;
+        transition: 0.4s ease-in-out;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        padding: 30px 0;
+    }
+
+    /* 當加上 .nav-active 類別時，選單從右邊滑出來 */
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    /* 拉開手機版選項的間距 */
+    .nav-links li {
+        margin: 25px 0;
+    }
+
+    /* 3. 漢堡按鈕變成「X」的動畫效果 */
+    .hamburger.toggle .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.toggle .bar:nth-child(2) {
+        opacity: 0; /* 中間那條線消失 */
+    }
+    .hamburger.toggle .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* ...保留你原本的其他手機版設定 (如 .hero 等) ... */
+}
