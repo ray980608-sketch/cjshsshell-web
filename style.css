@@ -132,17 +132,36 @@ nav {
     transition: all 0.3s ease-in-out;
     background-color: var(--accent-gold); /* 使用你設定的珍珠金色 */
 }
+/* ==============================
+   手機版適應 (RWD) - 統一斷點 768px
+   ============================== */
 @media (max-width: 768px) {
-    /* 1. 顯示漢堡按鈕 */
-    .hamburger {
-        display: block;
+    /* 1. 解決手機版照片裁切問題：海報式排版 */
+    .hero {
+        background-image: 
+            linear-gradient(rgba(0, 45, 64, 0.2) 0%, var(--evergreen-dark) 60%), 
+            url('images/beta.JPG');
+        background-size: 100% auto, 100% auto;
+        background-position: top, top;
+        background-repeat: no-repeat, no-repeat;
+        background-color: var(--evergreen-dark);
+        align-items: flex-end; 
+        padding-bottom: 15vh;
     }
 
-    /* 2. 手機版選單：改為垂直排列、滿版玻璃背景，並先藏在畫面右側 */
+    .hero-content h1 { font-size: 2.2rem; letter-spacing: 3px; margin-bottom: 15px; }
+    .hero-content p { font-size: 1rem; }
+    
+    .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .footer-nav h3::after, .footer-credit h3::after { left: 50%; transform: translateX(-50%); }
+    .intro-section { grid-template-columns: 1fr; }
+    
+    /* 2. 顯示漢堡按鈕並隱藏原本選單 */
+    .hamburger { display: block; }
     .nav-links {
         position: fixed;
-        right: -100%; /* 預設藏在畫面右側外 */
-        top: 70px; /* 導航列的高度下方 */
+        right: -100%;
+        top: 70px;
         flex-direction: column;
         background: var(--glass-bg);
         backdrop-filter: blur(15px);
@@ -153,26 +172,11 @@ nav {
         padding: 30px 0;
     }
 
-    /* 當加上 .nav-active 類別時，選單從右邊滑出來 */
-    .nav-links.nav-active {
-        right: 0;
-    }
+    .nav-links.nav-active { right: 0; }
+    .nav-links li { margin: 25px 0; }
 
-    /* 拉開手機版選項的間距 */
-    .nav-links li {
-        margin: 25px 0;
-    }
-
-    /* 3. 漢堡按鈕變成「X」的動畫效果 */
-    .hamburger.toggle .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.toggle .bar:nth-child(2) {
-        opacity: 0; /* 中間那條線消失 */
-    }
-    .hamburger.toggle .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-    
-    /* ...保留你原本的其他手機版設定 (如 .hero 等) ... */
+    /* 3. 漢堡按鈕動畫 */
+    .hamburger.toggle .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.toggle .bar:nth-child(2) { opacity: 0; }
+    .hamburger.toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }

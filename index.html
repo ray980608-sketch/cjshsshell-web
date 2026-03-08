@@ -10,7 +10,6 @@
 
     <nav>
         <a href="index.html" class="logo">EVER-GREEN 貝類館</a>
-        
         <div class="hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -20,23 +19,10 @@
             <li><a href="#about">場館簡介</a></li>
             <li><a href="#gallery">珍藏圖鑑</a></li>
             <li><a href="#science">科學與保育</a></li>
-            <li><a href="https://www.egsh.tn.edu.tw/" target="_blank" class="btn-school">回校首頁</a></li>
+            <li><a href="https://www.cjshs.tn.edu.tw/" target="_blank" class="btn-school">回校首頁</a></li>
         </ul>
     </nav>
 
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navLinks = document.querySelector(".nav-links");
-
-        hamburger.addEventListener("click", () => {
-            // 切換選單的顯示狀態
-            navLinks.classList.toggle("nav-active");
-            // 讓漢堡變成 X 的動畫狀態
-            hamburger.classList.toggle("toggle");
-        });
-    </script>
-</body>
-</html>
     <header class="hero">
         <div class="hero-content">
             <h1>數位典藏．海洋之窗</h1>
@@ -50,19 +36,18 @@
             <p>本館致力於保存各類珍稀貝殼標本。透過數位化典藏，讓師生能跨越時空限制，細讀每一枚貝殼背後的演化故事。本系統專供校內師生教學使用。</p>
         </div>
         <div style="background: #1a3c4d; height: 300px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-            <p style="opacity: 0.5;">[ 此處可放置 R8 拍攝的館內實景圖 ]</p>
+            <p style="opacity: 0.5;">[ 預留照片區 1 ]</p>
         </div>
     </section>
 
-    <section id="about" class="intro-section">
+    <section class="intro-section">
         <div style="background: #1a3c4d; height: 300px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-            <p style="opacity: 0.5;">[ 此處可放置 R8 拍攝的館內實景圖 ]</p>
+            <p style="opacity: 0.5;">[ 預留照片區 2 ]</p>
         </div>
         <div class="intro-text">
-            <h2>校園內的生物瑰寶</h2>
-            <p>本館致力於保存各類珍稀貝殼標本。透過數位化典藏，讓師生能跨越時空限制，細讀每一枚貝殼背後的演化故事。本系統專供校內師生教學使用。</p>
+            <h2>豐富的海洋記憶</h2>
+            <p>在這裡，每一枚貝殼都是大自然的藝術品。您可以瀏覽完整的數位圖鑑，探索來自世界各地的珍稀物種。</p>
         </div>
-        
     </section>
 
     <footer class="museum-footer">
@@ -86,7 +71,7 @@
                 <p>製作：多媒體設計科 陳柏睿製作</p>
                 <p>影像：Canon R8 數位紀錄</p>
                 <p>地點：台南市東區林森路二段79號</p>
-                <p>電話：(06)238-1711<p>
+                <p>電話：(06)238-1711</p>
             </div>
         </div>
         <div class="footer-copy">
@@ -94,5 +79,14 @@
         </div>
     </footer>
 
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("nav-active");
+            hamburger.classList.toggle("toggle");
+        });
+    </script>
 </body>
 </html>
