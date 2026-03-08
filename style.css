@@ -159,3 +159,15 @@ nav {
     .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
     .footer-nav h3::after, .footer-credit h3::after { left: 50%; transform: translateX(-50%); }
 }
+/* 讓圖片完美填滿圓角框，並加上滑鼠懸停動畫 */
+.intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 這個魔法會讓照片自動按比例填滿，不會被拉扁變形 */
+    transition: transform 0.5s ease; /* 動畫過渡時間 */
+}
+
+/* 滑鼠移上去時，照片會微微放大 */
+.intro-image:hover img {
+    transform: scale(1.05);
+}
