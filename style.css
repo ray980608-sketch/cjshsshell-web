@@ -423,3 +423,117 @@ nav {
             }
             .history-header h1 { font-size: 2.2rem; }
         }
+         /* ==============================
+           專屬 science.html 的懸浮卡片排版
+           ============================== */
+        body { 
+            background-color: var(--evergreen-dark);
+            padding-top: 100px;
+        }
+
+        .science-header {
+            text-align: center;
+            padding: 60px 20px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .science-header .tagline {
+            color: var(--accent-gold);
+            font-size: 1rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .science-header h1 {
+            font-size: 3rem;
+            letter-spacing: 5px;
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .science-header p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(244, 244, 244, 0.85);
+            text-align: justify;
+        }
+
+        /* 資訊卡片網格容器 (CSS Grid) */
+        .cards-container {
+            max-width: 1100px;
+            margin: 60px auto 100px;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動適應螢幕寬度排版 */
+            gap: 40px;
+        }
+
+        /* 單一卡片設計 */
+        .science-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 173, 106, 0.2);
+            border-radius: 15px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 卡片懸停特效：微微上浮 + 邊框發光 */
+        .science-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(201, 173, 106, 0.6);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        /* 卡片內的裝飾性數字 */
+        .card-number {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            font-size: 6rem;
+            font-weight: bold;
+            color: rgba(201, 173, 106, 0.1); /* 非常淡的金色作為背景浮水印 */
+            z-index: 0;
+            user-select: none;
+        }
+
+        .science-card h3 {
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .science-card p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: rgba(244, 244, 244, 0.85);
+            text-align: justify;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 呼籲行動區塊 (Call to Action) */
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to top, rgba(0, 45, 64, 1), rgba(0, 18, 25, 0));
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .science-header h1 { font-size: 2.2rem; }
+            .cards-container { gap: 25px; margin-top: 40px; }
+            .science-card { padding: 30px 20px; }
+        }
