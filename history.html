@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>場館歷史 | 長榮中學貝類館</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">EVER-GREEN 貝類館</a>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="about.html">前言諸論</a></li>
+            <li><a href="history.html" style="color: var(--accent-gold);">場館歷史</a></li>
+            <li><a href="index.html#gallery">貝殼圖鑑</a></li>
+            <li><a href="index.html#science">科學與保育</a></li>
+            <li><a href="https://www.cjshs.tn.edu.tw/" target="_blank" class="btn-school">回校首頁</a></li>
+        </ul>
+    </nav>
+
+    <header class="history-header">
+        <p class="tagline">HISTORY & HERITAGE</p>
+        <h1>沿革與傳承</h1>
+    </header>
+
+    <main class="timeline-container">
+        
+        <div class="timeline-item">
+            <div class="timeline-text">
+                <h2>1998 剪綵啟用</h2>
+                <p>「貝類館」於 1998 年 9 月 21 日校慶時剪綵啟用。長榮中學貝類館，堪稱全國規模最完善。蒐藏展示內容包含印度洋、太平洋兩大海域，共一百三十六科的一千二百二十八種台灣島嶼沿海貝類。館藏分為腹足、雙殼、掘足、多板及足頭等五大綱，每種少則一個，多則廿個，總數高達三、四千個。</p>
+            </div>
+            <div class="timeline-image placeholder">
+                <p>[ 建議放置：大範圍的展場空間實景圖 ]</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-text">
+                <h2>多元的教育展示</h2>
+                <p>貝類館除了貝殼實體展示外，還製作圖表，包括如何認識貝類、台灣島嶼地理環境、貝類分類、構造、各部名稱，及世界貝類分布等知識的提供。館內甚至展出採集貝類的工具與過程，是一處兼具教育、研究、觀賞等多重功能的學術空間。</p>
+            </div>
+            <div class="timeline-image placeholder">
+                <p>[ 建議放置：解說圖表或採集工具的特寫照片 ]</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-text">
+                <h2>半世紀的珍寶奉獻</h2>
+                <p>本館乃是由已故的古生物化石專家——蘇木樹老師負責籌設，他更無私地捐贈了自己半世紀來所蒐藏的貝類珍寶給長中。在蘇老師捐贈的六百六十二種貝類中，以帚形蛤、薄殼蛤、濾町渦螺最為珍貴，其中有些標本細小到必須使用顯微鏡才觀賞得清楚，足見其學術價值之高。</p>
+            </div>
+            <div class="timeline-image placeholder">
+                <p>[ 建議放置：蘇木樹老師相片 或 顯微鏡下珍貴微小貝類的微距特寫 ]</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="museum-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h2 class="footer-logo">長榮中學 <span>貝類館</span></h2>
+                <p class="school-name">Chang Jung Senior High School</p>
+                <p class="archive-tag">數位典藏教學系統 v1.0</p>
+            </div>
+            <div class="footer-nav">
+                <h3>快速導覽</h3>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">前言諸論</a></li>
+                    <li><a href="history.html">場館歷史</a></li>
+                    <li><a href="#gallery">貝殼圖鑑</a></li>
+                    <li><a href="#science">科學與保育</a></li>
+                    <li><a href="https://www.cjshs.tn.edu.tw/" target="_blank">回校首頁</a></li>
+                </ul>
+            </div>
+            <div class="footer-credit">
+                <h3>技術開發</h3>
+                <p>網頁製作：多媒體設計科 陳柏睿製作</p>
+                <p>影音剪輯：多媒體設計科 陳柏睿製作</p>
+                <p>影像：Canon R8 數位紀錄</p>
+                <p>地點：台南市東區林森路二段79號</p>
+                <p>電話：(06)238-1711</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 長榮高級中學. 僅供校內教學使用，未經授權禁止轉載.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("nav-active");
+            hamburger.classList.toggle("toggle");
+        });
+    </script>
+</body>
+</html>

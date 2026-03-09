@@ -313,3 +313,113 @@ nav {
                 border-left: none; 
             }
         }
+/* ==============================
+           專屬 history.html 的時光迴廊排版
+           ============================== */
+        body { 
+            background-color: var(--evergreen-dark);
+            padding-top: 100px; /* 避開導覽列 */
+        }
+
+        .history-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .history-header .tagline {
+            color: var(--accent-gold);
+            font-size: 1rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .history-header h1 {
+            font-size: 3rem;
+            letter-spacing: 5px;
+            color: var(--text-light);
+        }
+
+        /* 時光迴廊容器 */
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            padding: 0 5%;
+        }
+
+        /* 單一區塊設定 */
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        /* 讓偶數區塊反轉 (變成左圖右文) */
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-image {
+            flex: 1;
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        /* 圖片填滿魔法 */
+        .timeline-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .timeline-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* 圖片預留區的底色 (如果還沒放照片的話) */
+        .timeline-image.placeholder {
+            background: #1a3c4d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .timeline-image.placeholder p { opacity: 0.5; }
+
+        .timeline-text {
+            flex: 1;
+        }
+
+        .timeline-text h2 {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .timeline-text p {
+            font-size: 1.1rem;
+            line-height: 2;
+            text-align: justify;
+            color: rgba(244, 244, 244, 0.85);
+        }
+
+        /* 手機版適應：全部變成上圖下文 */
+        @media (max-width: 768px) {
+            .timeline-item, .timeline-item:nth-child(even) {
+                flex-direction: column;
+                gap: 25px;
+                margin-bottom: 60px;
+            }
+            .timeline-image {
+                width: 100%;
+                height: 250px;
+                order: -1; /* 強制圖片在上 */
+            }
+            .history-header h1 { font-size: 2.2rem; }
+        }
