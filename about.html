@@ -7,98 +7,6 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* ==============================
-           全新 about.html：現代雙欄藝廊排版
-           ============================== */
-        body { 
-            background-color: var(--evergreen-dark);
-            padding-top: 100px; /* 避開導覽列 */
-        }
-        
-        .editorial-container {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 40px 5%;
-            display: flex;
-            align-items: flex-start; /* 讓左邊可以固定在頂部 */
-            gap: 60px;
-        }
-
-        /* 左側：固定標題區 */
-        .editorial-header {
-            flex: 0 0 350px; /* 左邊寬度固定 */
-            position: sticky;
-            top: 150px; /* 往下滑時，標題會停留在距離頂部 150px 的位置 */
-        }
-
-        .editorial-header .tagline {
-            color: var(--accent-gold);
-            font-size: 0.95rem;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .editorial-header h1 {
-            font-size: 3.8rem;
-            letter-spacing: 5px;
-            line-height: 1.2;
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-
-        .editorial-header .divider {
-            width: 60px;
-            height: 3px;
-            background: var(--accent-gold);
-        }
-
-        /* 右側：滾動文章區 */
-        .editorial-content {
-            flex: 1;
-            padding-left: 40px;
-            border-left: 1px solid rgba(255, 255, 255, 0.1); /* 中間加一條淡淡的分隔線 */
-        }
-
-        .editorial-content p {
-            font-size: 1.15rem;
-            line-height: 2.1;
-            margin-bottom: 35px;
-            text-align: justify;
-            color: rgba(244, 244, 244, 0.85);
-        }
-
-        /* 魔法：第一段的第一個字放大 (首字放大) */
-        .editorial-content p:first-of-type::first-letter {
-            font-size: 3.5rem;
-            float: left;
-            margin-right: 12px;
-            line-height: 1;
-            color: var(--accent-gold);
-            font-weight: bold;
-            padding-top: 4px;
-        }
-
-        /* 手機版適應：變成上下排版 */
-        @media (max-width: 768px) {
-            .editorial-container { 
-                flex-direction: column; 
-                gap: 30px; 
-                padding: 20px 8%; 
-            }
-            .editorial-header { 
-                position: static; /* 取消手機版的固定效果 */
-                flex: auto; 
-                width: 100%; 
-                padding-bottom: 20px;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            .editorial-header h1 { font-size: 2.8rem; }
-            .editorial-content { 
-                padding-left: 0; 
-                border-left: none; 
-            }
-        }
     </style>
 </head>
 <body>
@@ -111,6 +19,7 @@
             <span class="bar"></span>
         </div>
         <ul class="nav-links">
+            <li><a href="index.html">首頁</a></li>
             <li><a href="about.html" style="color: var(--accent-gold);">前言諸論</a></li>
             <li><a href="index.html#history">場館歷史</a></li>
             <li><a href="index.html#gallery">貝殼圖鑑</a></li>
@@ -155,8 +64,10 @@
             <div class="footer-nav">
                 <h3>快速導覽</h3>
                 <ul>
-                    <li><a href="#about">場館簡介</a></li>
-                    <li><a href="#gallery">珍藏圖鑑</a></li>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">前言諸論</a></li>
+                    <li><a href="#history">場館歷史</a></li>
+                    <li><a href="#gallery">貝殼圖鑑</a></li>
                     <li><a href="#science">科學與保育</a></li>
                     <li><a href="https://www.cjshs.tn.edu.tw/" target="_blank">回校首頁</a></li>
                 </ul>
