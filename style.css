@@ -460,14 +460,22 @@ nav {
             text-align: justify;
         }
 
-        /* 資訊卡片網格容器 (CSS Grid) */
+        /* 資訊卡片網格容器：完美的 2x2 矩陣 */
         .cards-container {
-            max-width: 1100px;
+            max-width: 900px; /* 稍微縮小總寬度，讓 2x2 看起來更精緻緊湊 */
             margin: 60px auto 100px;
-            padding: 0 5%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動適應螢幕寬度排版 */
+            grid-template-columns: repeat(2, 1fr); /* 強制在電腦版分成相等的兩大行 */
             gap: 40px;
+        }
+
+        /* 確保手機版時，乖乖變回直排 1 行 */
+        @media (max-width: 768px) {
+            .cards-container { 
+                grid-template-columns: 1fr; 
+                gap: 25px; 
+                margin-top: 40px; 
+            }
         }
 
         /* 單一卡片設計 */
