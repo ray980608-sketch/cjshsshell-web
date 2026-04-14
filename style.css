@@ -618,19 +618,28 @@ nav {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 手機版適應：手機版 2 欄 */
+/* 手機與平板版：螢幕寬度小於 768px 時觸發 */
 @media (max-width: 768px) {
     .shell-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr); /* 關鍵：手機版 2 欄 */
+        gap: 15px; /* 手機間距縮小，畫面更緊湊 */
+        padding: 0 10px;
+    }
+
+    /* 手機版文字稍微縮小，避免卡片塞不下長名稱 */
+    .shell-info h3 {
+        font-size: 1rem;
+    }
+    .scientific-name {
+        font-size: 0.8rem;
     }
     
+    /* 調整分類按鈕在手機上的間距 */
     .filter-buttons {
-        gap: 10px;
+        gap: 8px;
     }
-    
     .filter-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
+        padding: 8px 12px;
+        font-size: 0.85rem;
     }
 }
