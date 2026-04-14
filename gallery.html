@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>長榮中學貝類館 | 網站首頁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">EVER-GREEN 貝類館</a>
+        
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" style="color: var(--accent-gold);">首頁</a></li>
+            <li><a href="about.html">前言諸論</a></li>
+            <li><a href="history.html">場館歷史</a></li>
+            <li><a href="#gallery"style="color: var(--accent-gold);">貝殼圖鑑</a></li>
+            <li><a href="science.html">科學與保育</a></li>
+            <li><a href="https://www.cjshs.tn.edu.tw/" target="_blank" class="btn-school">回校首頁</a></li>
+        </ul>
+    </nav>
+    
+    <section id="gallery" class="gallery-section">
+    <div class="gallery-header">
+        <header class="history-header">
+        <p class="tagline">SHELLFISH GUIDE</p>
+        <h1>貝類圖鑑</h1>
+    </header>
+        <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">全部館藏</button>
+        <button class="filter-btn" data-filter="gastropoda">腹足綱</button>
+        <button class="filter-btn" data-filter="bivalvia">雙殼綱</button>
+        <button class="filter-btn" data-filter="cephalopoda">頭足綱</button>
+        <button class="filter-btn" data-filter="scaphopoda">掘足綱</button>
+        <button class="filter-btn" data-filter="polyplacophora">多板綱</button>
+    </div>
+
+    <div class="shell-grid" id="shellGrid">
+        <div class="shell-card" data-category="bivalvia">
+            <div class="shell-img"><img src="images/IMG_0120.JPG" alt="帚形蛤"></div>
+            <div class="shell-info">
+                <h3>帚形蛤</h3>
+                <p class="scientific-name">Cuspidaria sp.</p>
+                <span class="tag">雙殼綱</span>
+            </div>
+        </div>
+        <div class="shell-card" data-category="gastropoda">
+            <div class="shell-img"><img src="images/IMG_0120.JPG" alt="濾町渦螺"></div>
+            <div class="shell-info">
+                <h3>濾町渦螺</h3>
+                <p class="scientific-name">Lyria sp.</p>
+                <span class="tag">腹足綱</span>
+            </div>
+        </div>
+        <div class="shell-card" data-category="cephalopoda">
+            <div class="shell-img"><img src="images/IMG_0120.JPG" alt="濾町渦螺"></div>
+            <div class="shell-info">
+                <h3>濾町渦螺</h3>
+                <p class="scientific-name">Lyria sp.</p>
+                <span class="tag">頭足綱</span>
+            </div>
+        </div>
+        <div class="shell-card" data-category="polyplacophora">
+            <div class="shell-img"><img src="images/IMG_0120.JPG" alt="濾町渦螺"></div>
+            <div class="shell-info">
+                <h3>濾町渦螺</h3>
+                <p class="scientific-name">Lyria sp.</p>
+                <span class="tag">多板綱</span>
+            </div>
+        </div>
+        <div class="shell-card" data-category="scaphopoda">
+            <div class="shell-img"><img src="images/IMG_0120.JPG" alt="濾町渦螺"></div>
+            <div class="shell-info">
+                <h3>濾町渦螺</h3>
+                <p class="scientific-name">Lyria sp.</p>
+                <span class="tag">掘足綱</span>
+            </div>
+        </div>
+        </div>
+
+        </div> </section> <footer class="museum-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h2 class="footer-logo">長榮中學 <span>貝類館</span></h2>
+                <p class="school-name">Chang Jung Senior High School</p>
+                <p class="archive-tag">數位典藏教學系統 v1.0</p>
+            </div>
+            <div class="footer-nav">
+                <h3>快速導覽</h3>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="about.html">前言諸論</a></li>
+                    <li><a href="history.html">場館歷史</a></li>
+                    <li><a href="#gallery">貝殼圖鑑</a></li>
+                    <li><a href="science.html">科學與保育</a></li>
+                    <li><a href="https://www.cjshs.tn.edu.tw/" target="_blank">回校首頁</a></li>
+                </ul>
+            </div>
+            <div class="footer-credit">
+                <h3>技術開發</h3>
+                <p>網頁製作：多媒體設計科 陳柏睿製作</p>
+                <p>影音剪輯：多媒體設計科 陳柏睿製作</p>
+                <p>影像拍攝：多媒體設計科 陳柏睿製作</p>
+                <p>地點：台南市東區林森路二段79號</p>
+                <p>電話：(06)238-1711</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 長榮高級中學. 僅供校內教學使用，未經授權禁止轉載.</p>
+        </div>
+    </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const shellCards = document.querySelectorAll('.shell-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 1. 切換按鈕活性樣式
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // 2. 執行過濾邏輯
+                const filterValue = btn.getAttribute('data-filter');
+                
+                shellCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        // 增加一個淡入動畫效果
+                        card.style.animation = 'fadeIn 0.5s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

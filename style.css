@@ -545,3 +545,92 @@ nav {
             .cards-container { gap: 25px; margin-top: 40px; }
             .science-card { padding: 30px 20px; }
         }
+ /* 圖鑑區塊樣式 */
+.gallery-section { padding: 10px 5%; background: rgba; }
+.gallery-header { text-align: center; margin-bottom: 50px; }
+
+.filter-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+.filter-btn {
+    background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold);
+    padding: 10px 25px; cursor: pointer; border-radius: 50px; transition: 0.3s;
+}
+.filter-btn.active, .filter-btn:hover { background: var(--accent-gold); color: #fff; }
+
+/* 電腦版：固定 4 欄排版 */
+.shell-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 強制設定為 4 欄，每欄平分空間 */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* 手機版：偵測螢幕寬度並切換為 2 欄排版 */
+@media (max-width: 768px) {
+    .shell-grid {
+        grid-template-columns: repeat(2, 1fr); /* 手機版強制設定為 2 欄 */
+        gap: 15px; /* 手機螢幕較窄，縮小間距能讓卡片更精緻 */
+    }
+    
+    /* 稍微縮小手機版卡片的內距與字體，避免畫面太擁擠 */
+    .shell-info {
+        padding: 15px;
+    }
+    .shell-info h3 {
+        font-size: 1rem;
+    }
+    .scientific-name {
+        font-size: 0.75rem;
+    }
+}
+/* 1. 標本圖片容器：強制正方形，並隱藏超出的部分 */
+.shell-img { 
+    width: 100%; 
+    aspect-ratio: 1 / 1; 
+    background: #1a3c4d; 
+    overflow: hidden; /* 關鍵：這樣圖片放大時才不會跑出圓角框框外 */
+    position: relative;
+}
+
+/* 2. 照片本身：完美填滿、不變形，並加上動畫過渡效果 */
+.shell-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 這個魔法指令保證照片絕不變形 */
+    transition: transform 0.6s ease; /* 滑鼠懸停動畫的時間 */
+}
+
+/* 3. 滑鼠懸停特效：當滑鼠移到整張卡片上時，照片微微放大 */
+.shell-card:hover .shell-img img {
+    transform: scale(1.08); /* 放大到 108% */
+}
+
+/* 網格系統：電腦版 4 欄 */
+.shell-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* 過濾時的淡入動畫 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 手機版適應：手機版 2 欄 */
+@media (max-width: 768px) {
+    .shell-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .filter-buttons {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
