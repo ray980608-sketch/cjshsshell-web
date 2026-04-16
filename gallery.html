@@ -120,6 +120,12 @@
     <script>
         const filterBtns = document.querySelectorAll('.filter-btn');
         const shellCards = document.querySelectorAll('.shell-card');
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("nav-active");
+            hamburger.classList.toggle("toggle");
+        });
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
